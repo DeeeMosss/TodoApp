@@ -42,15 +42,56 @@ footer {
     bottom: 0; 
 }
 
-.problemsList {
+.tasks {
     display: flex;
 }
 
-.problemsList form {
+.tasks .taskList {
     margin: auto;
     margin-top: 260px;
 }
 
 .list {
     list-style-type: none;
+    vertical-align: middle;
+}
+
+body {
+    background: -webkit-linear-gradient(129deg, #46528a,#9f5889);/* Chrome 10-25, Safari 5.1-6 */                          background: linear-gradient(129deg, #46528a,#9f5889);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */                                             
+}
+
+#button {
+    border: none;
+    width: 80px;
+    height: 40px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    border-radius: 7px;
+}
+
+#button:hover {
+    background-color: rgb(51, 6, 41);
+    color: rgb(255, 255, 255);
+}
+
+#button:active {
+    transform: scale(0.98);
+}
+
+#problems {
+    border: none;
+    outline-style: none;
+    width: 250px;
+    height: 38px;
+    border-radius: 7px;
+}
+
+.taskList input {
+    padding-left: 5px;
+    font-family: 'Raleway', sans-serif;
+    font-size: medium;
+}
+
+.taskList input:focus::placeholder {
+    color: transparent;
 }
