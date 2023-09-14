@@ -6,19 +6,19 @@ const themeModeBtn = document.getElementById('themeMode');
 let completed = false;
 const listCookies = []
 const notes = [
-  {
-    title: 'www',
-    completed: false,
-  },
+  // {
+  //   title: 'www',
+  //   completed: false,
+  // },
 ];
 
 
 // Функция рендеринга списка заметок из notes
 function render() {
   listElement.innerHTML = '';
-  if (notes.length === 0) {
-    listElement.innerHTML = '<p>Заметок нет</p>'
-  }
+  // if (notes.length === 0) {
+  //   listElement.innerHTML = '<p>Заметок нет</p>'
+  // }
   for (let i = 0; i < notes.length; i++) {
     listElement.insertAdjacentHTML('beforeend', getNoteTemplate(notes[i], i));
   }
