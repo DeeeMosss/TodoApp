@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+}
+
+header {
+  background-color: rgb(236, 233, 233);
+  border-bottom: solid 1px rgb(203, 203, 203);
+  border-top: solid 1px rgb(213, 213, 213);
+  width: 100%;
+  height: 50px;
+}
+
+header .appTitle {
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  margin: 13px;
+}
+
+footer {
+  background-color: rgb(236, 233, 233);
+  border-bottom: solid 1px rgb(203, 203, 203);
+  border-top: solid 1px rgb(213, 213, 213);
+  width: 100%;
+  bottom: 0;
+}
+
+.tasks {
+  display: flex;
+}
+
+.tasks .taskList {
+  margin: auto;
+  margin-top: 260px;
+}
+
+.list {
+  list-style-type: none;
+  vertical-align: middle;
+}
+
+body {
+
+    background: linear-gradient(
+      206deg, 
+      #1b071d,
+      #08010e
+    );   
+
+    /* background-image: url('https://sun9-39.userapi.com/impg/22a-xwOf017zhZLTsFRouKSVbbkm6n0NMl44HQ/2dUKPPGp8xg.jpg?size=1280x960&quality=95&sign=f62b0726193fa903b65ba17f4590af9f&type=album'); */
+}
+
+#button {
+  border: none;
+  width: 70px;
+  height: 37px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  border-radius: 7px;
+}
+
+#button:hover {
+  background-color: rgb(233, 195, 241);
+  color: rgb(0, 0, 0);
+}
+
+#button:active {
+  transform: scale(0.98);
+}
+
+#problems {
+  border: none;
+  outline-style: none;
+  width: 250px;
+  height: 38px;
+  border-radius: 7px;
+}
+
+.taskList input {
+  padding-left: 12px;
+  font-family: 'Raleway', sans-serif;
+  font-size: medium;
+}
+
+.taskList input:focus::placeholder {
+  color: transparent;
+}
+
+#themeMode {
+  position: absolute;
+  left: 90.5%;
+  top: 10px;
+  border: none;
+  background-color: transparent;
+}
+
+#themeImg {
+  width: 30px;
+}
+
+.list-group-item {
+  list-style: none;
+  padding: 10px;
+  margin-top: 3px;
+  border-radius: 7px;
+  cursor: default;
+  display: flex;
+  justify-content: space-between;
+  max-width: 314px;
+  font-family: 'Raleway', sans-serif;
+  background-color: rgba(240, 248, 255, 0.026);
+}
+
+.text-decoration-line-through {
+  text-decoration: line-through;
+}
+
+.btn-small:hover {
+  cursor: pointer;
+}
+
+.note-text {
+  margin-top: 3px;
+  inline-size: 230px;
+  overflow-wrap: break-word;
+  color: rgb(255, 255, 255);
+}
+
+.list-group-item:first-child {
+  margin-top: 7px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-small:first-child {
+  margin-right: 10px;
+}
+
+.btn-small {
+  background-color: #1b071d;
+  width: 25px;
+  height: 25px;
+  padding: 7px;
+  border: none;
+}
+
+.btn-danger {
+  background: transparent;
+  background-image: url('/images/delete.png');
+  background-position: center;
+  background-size: 20px;
+  border-radius: 6px;
+}
+
+.btn-success, .btn-warning {
+  background: transparent;
+  background-image: url('/images/success.png');
+  background-position: center;
+  background-size: 22px;
+  border-radius: 6px;
+}
+
+.btn-warning {
+  background-image: url('/images/yellow_success.png');
+  background-position: center;
+  background-size: 22px;
+  border-radius: 6px;
+}
+
+.btn-success:active, 
+.btn-warning:active, 
+.btn-danger:active {
+  scale: 0.93;
+}
