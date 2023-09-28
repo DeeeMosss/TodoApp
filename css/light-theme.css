@@ -201,3 +201,21 @@ body {
 .btn-danger:active {
   scale: 0.93;
 }
+
+#scroll-up {
+  position: fixed;
+  border: none;
+  width: 40px;
+  height: 40px;
+  margin-top: 15%;
+  margin-left: 5px;
+  border-radius: 50%;
+  background-color: rgba(37, 1, 33, 0.306);
+  opacity: 0;
+  animation: ani 0.2s forwards;
+}
+
+@keyframes ani {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}

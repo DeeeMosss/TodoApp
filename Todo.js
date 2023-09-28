@@ -1,15 +1,132 @@
-
 const inputElement = document.getElementById('problems');
 const createBtn = document.getElementById('button');
 const listElement = document.getElementById('listElement');
+const scrollUpBtn = document.getElementById('scroll-up');
+const btnContainer = document.getElementById('btn-container')
 const themeModeBtn = document.getElementById('themeMode');
 let completed = false;
-const listCookies = []
+const listCookies = [];
 const notes = [
-  // {
-  //   title: 'www',
-  //   completed: false,
-  // },
+  {
+    title: 'www',
+    completed: false,
+  },
+  {
+    title: 'www',
+    completed: false,
+  },
+  {
+    title: 'www',
+    completed: false,
+  },
+  {
+    title: 'www',
+    completed: false,
+  },
+  {
+    title: 'www',
+    completed: false,
+  },
+  {
+    title: 'www',
+    completed: false,
+  },
+  {
+    title: 'www',
+    completed: false,
+  },
+  {
+    title: 'www',
+    completed: false,
+  },
+  {
+    title: 'www',
+    completed: false,
+  },
+  {
+    title: 'www',
+    completed: false,
+  },
+  {
+    title: 'www',
+    completed: false,
+  },
+  {
+    title: 'www',
+    completed: false,
+  },
+  {
+    title: 'www',
+    completed: false,
+  },
+  {
+    title: 'www',
+    completed: false,
+  },
+  {
+    title: 'www',
+    completed: false,
+  },
+  {
+    title: 'www',
+    completed: false,
+  },
+  {
+    title: 'www',
+    completed: false,
+  },
+  {
+    title: 'www',
+    completed: false,
+  },
+  {
+    title: 'www',
+    completed: false,
+  },
+  {
+    title: 'www',
+    completed: false,
+  },
+  {
+    title: 'www',
+    completed: false,
+  },
+  {
+    title: 'www',
+    completed: false,
+  },
+  {
+    title: 'www',
+    completed: false,
+  },
+  {
+    title: 'www',
+    completed: false,
+  },
+  {
+    title: 'www',
+    completed: false,
+  },
+  {
+    title: 'www',
+    completed: false,
+  },
+  {
+    title: 'www',
+    completed: false,
+  },
+  {
+    title: 'www',
+    completed: false,
+  },
+  {
+    title: 'www',
+    completed: false,
+  },
+  {
+    title: 'www',
+    completed: false,
+  },
 ];
 
 
@@ -20,16 +137,24 @@ function render() {
   //   listElement.innerHTML = '<p>Заметок нет</p>'
   // }
   for (let i = 0; i < notes.length; i++) {
-    listElement.insertAdjacentHTML('beforeend', getNoteTemplate(notes[i], i));
+    listElement.insertAdjacentHTML('beforeend', getNoteTemplate(notes[i], i))
   }
 }
 render();
 
+
 // Обработчик нажатия на кнопку 'Добавить'
 createBtn.onclick = function () {
+
+  let countSpace = (inputElement.value.split(' ').length - 1);
+
   if (inputElement.value.length === 0) {
     return;
+  }else if (countSpace === inputElement.value.length) {
+    inputElement.value = '';
+    return;
   }
+
   const newNote = {
     title: inputElement.value,
     completed: false,
@@ -54,6 +179,24 @@ listElement.onclick = function (event) {
     render();
   }
 };
+
+// Отслеживание позиция скролла
+btnContainer.innerHTML = ''
+window.addEventListener('scroll', function () {
+  const scrollPosition = window.scrollY;
+  console.log(scrollPosition)
+
+  if (scrollPosition <= 310) {
+
+    btnContainer.innerHTML = ''
+
+  }else {
+    btnContainer.innerHTML = `<div id="btn-container">
+    <button id="scroll-up" onclick="window.scrollTo(0,0)"></button>
+</div>`
+  }
+});
+
 
 // Шаблон элемента списка задач
 function getNoteTemplate(note, index) {
@@ -126,41 +269,19 @@ window.CookieObj = cookies;
 
 // Функция сохранения куки
 function saveCookies() {
-    for (let i = 0; i < notes.length; i++) {
-      cookies.setCookie(i, notes[i].title);
-    }
+  for (let i = 0; i < notes.length; i++) {
+    cookies.setCookie(i, notes[i].title);
+  }
 }
 
 // Функция, возвращающая список всех куки
-function listCookie() {
-  const cookiesList = []
-  let cookie = document.cookie
-  let cookieObjects = []
-  let cookies = cookie.split(';').reduce(
-      (cookies, cookie) => {
-          const [name, val] = cookie.split('=').map(c => c.trim());
-          cookies['id'] = name
-          cookies['title'] = val
-          cookiesList.push(cookies)
-          return cookiesList;
-      }, {});
-  return cookiesList
+async function getCookiesList() {
+  let promiseCookies = await cookieStore.getAll();
+  if (promiseCookies) {
+    console.log(promiseCookies);
+  } else {
+    console.log('Cookie not found');
+  }
 }
 
-// async function getCookiesList() {
-//     let promiseCookies = await cookieStore.getAll();
-//     if (promiseCookies) {
-//       console.log(promiseCookies);
-//     } else {
-//       console.log("Cookie not found");
-//     }
-//     return cookies
-// }
-
-// getCookiesList()
-
-const p = cookieStore.getAll()
-
-p.then(() => {
-  console.log('Promise resolved')
-})
+// getCookiesList();
